@@ -175,7 +175,7 @@ def quick_sort(numbers):
     if len(numbers) <= 1:
         return numbers
 
-    pivot = numbers[-1]
+    pivot = numbers[len(numbers) // 2]
 
     smaller = []
     equal = []
