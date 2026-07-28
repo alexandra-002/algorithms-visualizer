@@ -150,3 +150,43 @@ def merge(left, right):
     merged.extend(right[right_index:])
 
     return merged
+
+
+def quick_sort(numbers):
+    """
+    Sort a list in ascending order using Quick Sort.
+
+    Args:
+        numbers (list): List of numbers.
+
+    Returns:
+        list: Sorted list.
+    """
+
+    numbers = numbers.copy()
+
+    if len(numbers) <= 1:
+        return numbers
+
+    pivot = numbers[-1]
+
+    smaller = []
+    equal = []
+    larger = []
+
+    for number in numbers:
+
+        if number < pivot:
+            smaller.append(number)
+
+        elif number == pivot:
+            equal.append(number)
+
+        else:
+            larger.append(number)
+
+    return (
+        quick_sort(smaller)
+        + equal
+        + quick_sort(larger)
+    )

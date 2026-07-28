@@ -9,7 +9,8 @@ from src.algorithms import (
     bubble_sort,
     selection_sort,
     insertion_sort,
-    merge_sort
+    merge_sort,
+    quick_sort
 )
 
 
@@ -99,3 +100,30 @@ def test_merge_sort_duplicates():
     sorted_numbers = merge_sort(numbers)
 
     assert sorted_numbers == [1, 2, 2, 5, 5]
+
+
+def test_quick_sort():
+
+    numbers = [10, 7, 8, 9, 1, 5]
+
+    sorted_numbers = quick_sort(numbers)
+
+    assert sorted_numbers == [1, 5, 7, 8, 9, 10]
+
+
+def test_quick_sort_duplicates():
+
+    numbers = [4, 2, 7, 2, 1, 4]
+
+    sorted_numbers = quick_sort(numbers)
+
+    assert sorted_numbers == [1, 2, 2, 4, 4, 7]
+
+
+def test_quick_sort_negative_numbers():
+
+    numbers = [-3, 5, -1, 0, 2]
+
+    sorted_numbers = quick_sort(numbers)
+
+    assert sorted_numbers == [-3, -1, 0, 2, 5]
