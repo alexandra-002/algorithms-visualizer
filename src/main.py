@@ -1,14 +1,23 @@
-from visualize import plot_array
+from algorithms import bubble_sort
+from animation import create_animation
 
 
 def main():
 
     numbers = [8, 3, 5, 1, 9]
 
-    plot_array(
+    history = []
+
+
+    bubble_sort(
         numbers,
-        "Example Array",
-        "images/example_array.png"
+        history
+    )
+
+
+    create_animation(
+        history,
+        "images/bubble_sort_animation.gif"
     )
 
 
