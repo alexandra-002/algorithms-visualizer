@@ -8,7 +8,8 @@ sys.path.append(
 from src.algorithms import (
     bubble_sort,
     selection_sort,
-    insertion_sort
+    insertion_sort,
+    merge_sort
 )
 
 
@@ -75,3 +76,26 @@ def test_insertion_sort_negative_numbers():
     sorted_numbers = insertion_sort(numbers)
 
     assert sorted_numbers == [-5, -1, 0, 3, 4]
+
+
+def test_merge_sort():
+
+    numbers = [38, 27, 43, 3, 9, 82, 10]
+
+    sorted_numbers = merge_sort(numbers)
+
+    assert sorted_numbers == [3, 9, 10, 27, 38, 43, 82]
+
+
+def test_merge_sort_empty():
+
+    assert merge_sort([]) == []
+
+
+def test_merge_sort_duplicates():
+
+    numbers = [5, 2, 5, 1, 2]
+
+    sorted_numbers = merge_sort(numbers)
+
+    assert sorted_numbers == [1, 2, 2, 5, 5]
