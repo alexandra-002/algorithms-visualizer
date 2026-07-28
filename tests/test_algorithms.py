@@ -5,7 +5,7 @@ sys.path.append(
     str(Path(__file__).parent.parent)
 )
 
-from src.algorithms import bubble_sort
+from src.algorithms import bubble_sort, selection_sort
 
 
 def test_bubble_sort():
@@ -35,3 +35,21 @@ def test_already_sorted():
 def test_duplicates():
 
     assert bubble_sort([4, 2, 4, 1]) == [1, 2, 4, 4]
+
+
+def test_selection_sort():
+
+    numbers = [64, 25, 12, 22, 11]
+
+    sorted_numbers = selection_sort(numbers)
+
+    assert sorted_numbers == [11, 12, 22, 25, 64]
+
+
+def test_selection_sort_duplicates():
+
+    numbers = [5, 3, 5, 1, 2]
+
+    sorted_numbers = selection_sort(numbers)
+
+    assert sorted_numbers == [1, 2, 3, 5, 5]

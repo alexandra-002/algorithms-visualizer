@@ -30,3 +30,35 @@ def bubble_sort(numbers):
                 )
 
     return numbers
+
+
+def selection_sort(numbers):
+    """
+    Sort a list in ascending order using Selection Sort.
+
+    Args:
+        numbers (list): List of numbers.
+
+    Returns:
+        list: Sorted list.
+    """
+
+    numbers = numbers.copy()
+
+    n = len(numbers)
+
+    for i in range(n):
+
+        minimum_index = i
+
+        for j in range(i + 1, n):
+
+            if numbers[j] < numbers[minimum_index]:
+                minimum_index = j
+
+        numbers[i], numbers[minimum_index] = (
+            numbers[minimum_index],
+            numbers[i]
+        )
+
+    return numbers
