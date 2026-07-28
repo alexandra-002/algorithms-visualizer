@@ -160,7 +160,8 @@ algorithms-visualizer/
 │   └── visualize.py
 │
 ├── tests/
-│   └── test_algorithms.py
+│   ├── test_algorithms.py
+│   └── test_data_structures.py
 │
 ├── README.md
 ├── requirements.txt
