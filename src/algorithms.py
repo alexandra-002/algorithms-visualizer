@@ -62,3 +62,33 @@ def selection_sort(numbers):
         )
 
     return numbers
+
+
+def insertion_sort(numbers):
+    """
+    Sort a list in ascending order using Insertion Sort.
+
+    Args:
+        numbers (list): List of numbers.
+
+    Returns:
+        list: Sorted list.
+    """
+
+    numbers = numbers.copy()
+
+    for i in range(1, len(numbers)):
+
+        current_value = numbers[i]
+
+        position = i - 1
+
+        while position >= 0 and numbers[position] > current_value:
+
+            numbers[position + 1] = numbers[position]
+
+            position -= 1
+
+        numbers[position + 1] = current_value
+
+    return numbers
