@@ -3,12 +3,13 @@ Sorting algorithms used throughout the project.
 """
 
 
-def bubble_sort(numbers):
+def bubble_sort(numbers, history=None):
     """
-    Sort a list in ascending order using Bubble Sort.
+    Sort a list using Bubble Sort.
 
     Args:
         numbers (list): List of numbers.
+        history (list): Stores sorting steps.
 
     Returns:
         list: Sorted list.
@@ -22,12 +23,18 @@ def bubble_sort(numbers):
 
         for j in range(0, n - i - 1):
 
+            if history is not None:
+                history.append(numbers.copy())
+
             if numbers[j] > numbers[j + 1]:
 
                 numbers[j], numbers[j + 1] = (
                     numbers[j + 1],
                     numbers[j]
                 )
+
+    if history is not None:
+        history.append(numbers.copy())
 
     return numbers
 
